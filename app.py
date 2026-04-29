@@ -126,13 +126,18 @@ def sync_all():
             sync_status['status'] = '데이터 없음'
             return
 
-        # 2. 기존 데이터 삭제
+        # 2. 기존 데이터 삭제 (전체 삭제 후 재삽입)
         logger.info('기존 데이터 삭제 중...')
-        requests.delete(
+        # id가 0보다 크거나 같은 모든 행 삭제 (전체 삭제)
+        del_res = requests.delete(
             f'{SUPABASE_URL}/rest/v1/{TABLE_NAME}?id=gte.0',
             headers=supabase_headers,
             timeout=60
         )
+        logger.info(f'삭제 완료: {del_res.status_code}')
+        # 삭제 완료 후 잠시 대기
+        import time
+        time.sleep(2)
 
         # 3. 배치 삽입
         inserted = 0
