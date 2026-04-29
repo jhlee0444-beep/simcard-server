@@ -25,12 +25,12 @@ SHEETS = {
     '기본':        'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=2135846874&single=true&output=csv',
     '재사용공심':  'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=965015374&single=true&output=csv',
     '창성정보통신':'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=1551352435&single=true&output=csv',
-    'JCB':         'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=585592835&single=true&output=csv',
-    '차이나텔레콤':'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=1257657731&single=true&output=csv',
+    'JCB':         'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=2078441337&single=true&output=csv',
+    '차이나텔레콤':'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=585592835&single=true&output=csv',
     '보스그룹':    'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=84263069&single=true&output=csv',
     'PPL':         'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=1257657731&single=true&output=csv',
     '코드':        'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=1285137321&single=true&output=csv',
-    '포스원':      'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=707329122&single=true&output=csv',
+    '포스원':      'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=2012098034&single=true&output=csv',
     '한유망':      'https://docs.google.com/spreadsheets/d/e/2PACX-1vS96r7U61fAYW8skGXcV-mJ9Xo890SUPaLPuX3DzgohGwIZ4_kezL8_jBMnsKhrgihRbb5c0lJDb4vU/pub?gid=707329122&single=true&output=csv',
 }
 
