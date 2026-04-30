@@ -83,11 +83,11 @@ def insert_batch(rows):
         return True
     resp = requests.post(
         f'{SUPABASE_URL}/rest/v1/{TABLE_NAME}',
-        headers=supabase_headers,
+        headers={**supabase_headers, 'Prefer': 'resolution=merge-duplicates,return=minimal'},
         json=rows,
         timeout=60
     )
-    if resp.status_code != 201:
+    if resp.status_code not in [200, 201]:
         logger.error(f'삽입 오류: {resp.status_code} / {resp.text[:300]}')
         return False
     return True
@@ -126,18 +126,21 @@ def sync_all():
             sync_status['status'] = '데이터 없음'
             return
 
-        # 2. 기존 데이터 삭제 (전체 삭제 후 재삽입)
+        # 2. 기존 데이터 전체 삭제 (TRUNCATE 방식)
         logger.info('기존 데이터 삭제 중...')
-        # id가 0보다 크거나 같은 모든 행 삭제 (전체 삭제)
+        del_headers = {
+            'apikey': SUPABASE_KEY,
+            'Authorization': f'Bearer {SUPABASE_KEY}',
+            'Content-Type': 'application/json'
+        }
         del_res = requests.delete(
-            f'{SUPABASE_URL}/rest/v1/{TABLE_NAME}?id=gte.0',
-            headers=supabase_headers,
-            timeout=60
+            f'{SUPABASE_URL}/rest/v1/{TABLE_NAME}?id=gt.0',
+            headers=del_headers,
+            timeout=120
         )
         logger.info(f'삭제 완료: {del_res.status_code}')
-        # 삭제 완료 후 잠시 대기
         import time
-        time.sleep(2)
+        time.sleep(3)
 
         # 3. 배치 삽입
         inserted = 0
