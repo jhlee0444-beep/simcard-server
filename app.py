@@ -126,19 +126,21 @@ def sync_all():
             sync_status['status'] = '데이터 없음'
             return
 
-        # 2. 기존 데이터 전체 삭제 (TRUNCATE 방식)
+        # 2. 기존 데이터 전체 삭제 (RPC로 TRUNCATE)
         logger.info('기존 데이터 삭제 중...')
         del_headers = {
             'apikey': SUPABASE_KEY,
             'Authorization': f'Bearer {SUPABASE_KEY}',
             'Content-Type': 'application/json'
         }
-        del_res = requests.delete(
-            f'{SUPABASE_URL}/rest/v1/{TABLE_NAME}?id=gt.0',
+        # Supabase RPC로 TRUNCATE 실행
+        trunc_res = requests.post(
+            f'{SUPABASE_URL}/rest/v1/rpc/truncate_simcards',
             headers=del_headers,
+            json={},
             timeout=120
         )
-        logger.info(f'삭제 완료: {del_res.status_code}')
+        logger.info(f'TRUNCATE 완료: {trunc_res.status_code}')
         import time
         time.sleep(3)
 
